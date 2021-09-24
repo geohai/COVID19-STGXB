@@ -1,8 +1,9 @@
-## Welcome to GitHub Pages
+## Welcome to COVID-STXGB Project Page
 
-You can use the [editor on GitHub](https://github.com/geohai/COVID19-STGXB/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Spatio Temporal eXtreme Gradient Boosting (STXGB) model, presented in the __Predicting County-Level COVID-19 Cases using Spatiotemporal Machine Learning Through Social Media and Cell-Phone Data as Proxies for Human Interactions__ paper, is a spatiotemporal autoregressive model for predicting COVID-19 cases at the county level in Contiguous US.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# COVID-STXGB
+The repository for Spatio Temporal eXtreme Gradient Boosting (STXGB) model presented in the __Predicting County-Level COVID-19 Cases using Spatiotemporal Machine Learning Through Social Media and Cell-Phone Data as Proxies for Human Interactions__ paper.
 
 ### Markdown
 
@@ -34,4 +35,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Having questions about the model,ata, etc? Check out our [repository readme](https://github.com/geohai/COVID19-STGXB) or [contact the corresponding author(s)](mailto:behzad@colorado.edu) and we’ll help you sort it out.
