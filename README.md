@@ -3,11 +3,11 @@ The repository for Spatio Temporal eXtreme Gradient Boosting (STXGB) model prese
 
 You must cite the paper above if you are planning to use the code.
 
-There are two notebooks in this repository as follows:
+There are three notebooks in this repository as follows:
 
-## 1. Feature Generation
+## Data Preparation
 
-A notebook to generate training data for ML models
+A notebook for generating training data for ML models
 
 Input Files needed to run this notebook:
 
@@ -37,22 +37,28 @@ Should be produced for the desired date
 Uploaded to Drive: https://drive.google.com/drive/u/1/folders/1Z5KTcz5LZjGG_SepZAYJ8BgJ8ZACz6nd
 
 
-## 2. SpatioTemporal Autoregressive models
+## STXGB Model
 
-Machine Leaning Models for COVID-19 forecasts
+This notebook contains the code for developing STXGB models. STXGB has three variants (STXGB-FB, STXGB-SG, and STXGB-SGR) and first we define the features that we have used in each variant. Then for each prediction horizon, we train a separate model using XGBoost algorithm.
 
 Input Files needed to run this notebook:
 
 
-> Output of Feature Generation Notebook (called 'combined_df.csv')
+> Output of Feature Generation Notebook (called 'all_features_v1.csv')
 
-> The second output of Feature Generation Notebook which includes lagged data ('combined_df_lagged_y.csv')
+We have provided this file for you, so you don't need to run the Data Preparation notebook. 
 
 > US counties ('Conterminous_US_counties.geojson')
 Uploaded to Drive: https://drive.google.com/drive/u/1/folders/1k6f2UcTTdDui_Y5wR17EKIMripRx8qjQ
 
-> COVID-19 case data from John Hopkins ('time_series_covid19_confirmed_US.csv')
-download from: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 
-> COVID FOrecast Hub predictions
-Download from https://github.com/reichlab/covid19-forecast-hub/tree/master/data-processed/COVIDhub-ensemble
+
+## Generate Prediction Intervals
+
+This notebook is used to generate 95% prediction intervals. The XGBoost algorithm does not support interval prediction, therefore we have used Stochastic Gradient Boosting Regressor for generating interval predictions.
+
+
+For each time step, we train 3 models. One for point predictions (which is only used for comparison with XGB predictions), one for lower quantile prediction, and one for upper quantile prediction. The latter two use a `quantile` loss (`alpha`= 0.025 and 0.975 respectively) whereas the first one uses `neg_root_mean_squared_error`.
+
+
+Sections 1 and 2 of this notebook is very similar to the main notebook (`STXGB model`).
