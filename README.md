@@ -1,7 +1,6 @@
 # COVID-STXGB
 The repository for Spatio Temporal eXtreme Gradient Boosting (STXGB) model presented in the __Predicting County-Level COVID-19 Cases using Spatiotemporal Machine Learning Through Social Media and Cell-Phone Data as Proxies for Human Interactions__ paper.
 
-### [Here](https://geohai.github.io/COVID19-STGXB/) is the project website
 
 
 You must cite the paper above if you are planning to use the code.
